@@ -19,11 +19,11 @@ public class PostService {
         return postRepo.findAll();
     }
 
-    public Post findById(long id) {
+    public Post findById(Long id) {
         return postRepo.findById(id).orElseThrow();
     }
 
-    public Post getById(long id) {
+    public Post getById(Long id) {
         return postRepo.getReferenceById(id);
     }
 
@@ -42,6 +42,9 @@ public class PostService {
         updated.setUser(post.getUser());
         
         return postRepo.save(post);
+    }
+    public void deleteById(Long id){
+        postRepo.deleteById(id);
     }
 
 }
